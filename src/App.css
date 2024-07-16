@@ -62,13 +62,14 @@ body {
 }
 
 .clearButton {
-  display: block; /* Ensure the button is a block-level element to appear on a new line */
-  margin: 20px auto; /* Position the button below the canvas and center it horizontally */
+  /* display: block; /* Ensure the button is a block-level element to appear on a new line */
+  /* margin: 20px auto; /* Position the button below the canvas and center it horizontally */
   /* Other styles remain unchanged */
 }
 
-.color-picker-container {
-  display: flex; /* Use flexbox to align the color picker and label */
-  justify-content: center; /* Center the color picker and label horizontally */
-  margin-bottom: 20px; /* Add space between the color picker and the clear button */
+.controls {
+  display: flex; /* Enable flexbox to align items in a row */
+  justify-content: center; /* Center the controls horizontally */
+  margin-top: 20px; /* Add space between the canvas and the controls */
+  gap: 10px; /* Optional: add some space between the controls */
 }

@@ -1,12 +1,17 @@
 
 import './App.css';
 import React, { useEffect, useRef, useState } from 'react';
-import ColorPicker from './ColorPicker.jsx';
+// Remove the unused import statement
 function App() {
 
   const canvasRef = useRef(null)
   const contextRef = useRef(null)
-  const [isDrawing, setIsDrawing] = useState(false)
+  const [isDrawing, setIsDrawing] = useState(false);
+  const [color, setColor] = useState("#000000");
+
+  const changeColor = (event) => {
+    setColor(event.target.value);
+  }
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -20,10 +25,15 @@ function App() {
     const context = canvas.getContext('2d');
     context.scale(2, 2); // Adjust scale if you're changing the resolution
     context.lineCap = 'round';
-    context.strokeStyle = 'black';
     context.lineWidth = 5;
     contextRef.current = context;
   }, []);
+
+  useEffect(() => {
+    if(contextRef.current) {
+      contextRef.current.strokeStyle = color;
+    }
+  }, [color]);
 
   const startDrawing = ({nativeEvent}) => {
     const {offsetX, offsetY} = nativeEvent
@@ -61,8 +71,12 @@ function App() {
         onMouseLeave={finishDrawing}
         ref={canvasRef}
       />
+      
+      <div className="controls">
       <button onClick={clearCanvas} className='clearButton'>Clear</button>
-      <ColorPicker />
+      <input type="color" onChange={changeColor} value={color} /> {}
+      </div>
+
     </div>
   );
 }

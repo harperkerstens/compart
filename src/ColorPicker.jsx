@@ -16,4 +16,5 @@ function ColorPicker(){
     </div>);
 }
 
-export default ColorPicker
+
+//     MIGHT BE ABLE TO DELETE THIS
