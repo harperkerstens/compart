@@ -1,10 +1,27 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background-color: black; /* Ensure the background color is black */
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+#canvasWidth {
+  margin-right: 10px;
+}
+
+#canvasHeight {
+  margin-right: 10px;
+}
+
+button {
+  margin-right: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -28,11 +45,30 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+body {
+  background-color: black; /* Set page background to black */
+}
+
+.canvas {
+  background-color: white; /* Canvas background to white */
+  width: 50vw; /* Half the viewport width */
+  height: 50vh; /* Half the viewport height */
+  display: block;
+  margin: 0 auto; /* Keep horizontal centering */
+  margin-top: 50px; /* Add space between the canvas and the top of the page */
+  /* Alternatively, you could use padding-top on a parent container if applicable */
+}
+
+.clearButton {
+  display: block; /* Ensure the button is a block-level element to appear on a new line */
+  margin: 20px auto; /* Position the button below the canvas and center it horizontally */
+  /* Other styles remain unchanged */
+}
+
+.color-picker-container {
+  display: flex; /* Use flexbox to align the color picker and label */
+  justify-content: center; /* Center the color picker and label horizontally */
+  margin-bottom: 20px; /* Add space between the color picker and the clear button */
 }

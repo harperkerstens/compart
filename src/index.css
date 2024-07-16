@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+clearButton{
+  color: black;
+  font-style: white;
+  position: relative;
+}
